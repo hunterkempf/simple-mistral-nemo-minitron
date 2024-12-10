@@ -13,6 +13,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 text_generation_pipeline = pipeline(
     model=model,
     tokenizer=tokenizer,
+    pad_token_id=tokenizer.eos_token_id,
     task="text-generation",
     temperature=0.2,
     do_sample=True,
